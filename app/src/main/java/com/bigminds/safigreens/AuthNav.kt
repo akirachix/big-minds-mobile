@@ -191,7 +191,7 @@ fun WelcomeScreen(navController: NavController) {
             )
             Spacer(modifier = Modifier.height(36.dp))
             Button(
-                onClick = { navController.navigate(Screens.RoleSelection.route) },
+                onClick = { navController.navigate(Screens.WelcomeMama.route) },
                 modifier = Modifier
                     .padding(horizontal = 100.dp)
                     .fillMaxWidth()
@@ -287,7 +287,7 @@ fun WelcomeScreenMama(navController: NavController) {
             )
             Spacer(modifier = Modifier.height(36.dp))
             Button(
-                onClick = { navController.navigate(Screens.RoleSelection.route) },
+                onClick = { navController.navigate(Screens.WelcomeCustomer.route) },
                 modifier = Modifier
                     .padding(horizontal = 100.dp)
                     .fillMaxWidth()
@@ -583,7 +583,7 @@ fun SignUpScreen(navController: NavController) {
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(top = 16.dp)
+            modifier = Modifier.padding(top = 18.dp)
         ) {
             Image(
                 painterResource(id = R.drawable.green),
@@ -669,7 +669,7 @@ fun SignUpScreen(navController: NavController) {
                     onValueChange = { pin = it },
                     placeholder = { Text("Create pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
                     visualTransformation = if (showPin) VisualTransformation.None else PasswordVisualTransformation(),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -689,7 +689,7 @@ fun SignUpScreen(navController: NavController) {
                     onValueChange = { confirmPin = it },
                     placeholder = { Text("Confirm pin", fontFamily = Nunito, fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
                     visualTransformation = if (showConfirm) VisualTransformation.None else PasswordVisualTransformation(),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -818,7 +818,7 @@ fun SignInScreen(navController: NavController) {
                     placeholder = { Text("Enter your pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
                     visualTransformation = if (showPin) VisualTransformation.None else PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Password,
+                        keyboardType = KeyboardType.NumberPassword,
                         imeAction = ImeAction.Done
                     ),
                     shape = RoundedCornerShape(10.dp),
@@ -969,7 +969,7 @@ fun ResetPinScreen(navController: NavController) {
                     value = pin,
                     onValueChange = { pin = it },
                     placeholder = { Text("Enter your pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxWidth()
@@ -989,7 +989,7 @@ fun ResetPinScreen(navController: NavController) {
                     value = confirmPin,
                     onValueChange = { confirmPin = it },
                     placeholder = { Text("confirm pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxWidth()
