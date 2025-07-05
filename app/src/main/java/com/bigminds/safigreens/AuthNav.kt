@@ -631,6 +631,7 @@ fun SignUpScreen(navController: NavController) {
                     onValueChange = { name = it },
                     placeholder = { Text("Enter name", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
                     shape = RoundedCornerShape(10.dp),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(14.dp))
@@ -649,7 +650,7 @@ fun SignUpScreen(navController: NavController) {
                     value = phone,
                     onValueChange = { phone = it },
                     placeholder = { Text("+254", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -799,7 +800,7 @@ fun SignInScreen(navController: NavController) {
                     placeholder = { Text("+254", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(10.dp),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword)
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
