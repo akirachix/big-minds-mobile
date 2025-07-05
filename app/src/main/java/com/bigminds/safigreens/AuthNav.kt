@@ -110,7 +110,7 @@ fun SplashScreen(navController: NavController) {
                     lineTo(0f, height)
                     close()
                 }
-                drawPath(path, color = Color(0xFF004D29))
+                drawPath(path, color = Color(0xFF094C37))
             }
         }
     }
@@ -121,7 +121,7 @@ fun WelcomeScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color(0xFF0B4D29))
+            .background(color = Color(0xFF094C37))
     ) {
         Column(
             modifier = Modifier
@@ -148,7 +148,7 @@ fun WelcomeScreen(navController: NavController) {
                     Image(
                         painter = painterResource(id = R.drawable.greenbasket),
                         contentDescription = "Grocery Basket",
-                        modifier = Modifier.size(300.dp)
+                        modifier = Modifier.size(500.dp)
                     )
                 }
             }
@@ -193,17 +193,18 @@ fun WelcomeScreen(navController: NavController) {
             Button(
                 onClick = { navController.navigate(Screens.RoleSelection.route) },
                 modifier = Modifier
-                    .padding(horizontal = 32.dp)
+                    .padding(horizontal = 100.dp)
                     .fillMaxWidth()
                     .height(48.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
                 shape = RoundedCornerShape(24.dp)
-            ) {
+            )
+            {
                 Text(
                     "Continue",
                     fontSize = 18.sp,
                     fontFamily = Nunito,
-                    color = Color(0xFF0B4D29),
+                    color = Color(0xFF094C37),
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -216,7 +217,7 @@ fun WelcomeScreenMama(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color(0xFF0B4D29))
+            .background(color = Color(0xFF094C37))
     ) {
         Column(
             modifier = Modifier
@@ -235,7 +236,7 @@ fun WelcomeScreenMama(navController: NavController) {
                 Column(
                     Modifier
                         .fillMaxSize()
-                        .padding(top = 24.dp),
+                        .padding(top = 60.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Top
                 ) {
@@ -286,9 +287,9 @@ fun WelcomeScreenMama(navController: NavController) {
             )
             Spacer(modifier = Modifier.height(36.dp))
             Button(
-                onClick = { navController.navigate(Screens.AuthSelection.route) },
+                onClick = { navController.navigate(Screens.RoleSelection.route) },
                 modifier = Modifier
-                    .padding(horizontal = 32.dp)
+                    .padding(horizontal = 100.dp)
                     .fillMaxWidth()
                     .height(48.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
@@ -298,7 +299,7 @@ fun WelcomeScreenMama(navController: NavController) {
                     "Continue",
                     fontSize = 18.sp,
                     fontFamily = Nunito,
-                    color = Color(0xFF0B4D29),
+                    color = Color(0xFF094C37),
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -311,7 +312,7 @@ fun WelcomeScreenCustomer(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color(0xFF0B4D29))
+            .background(color = Color(0xFF094C37))
     ) {
         Column(
             modifier = Modifier
@@ -330,7 +331,7 @@ fun WelcomeScreenCustomer(navController: NavController) {
                 Column(
                     Modifier
                         .fillMaxSize()
-                        .padding(top = 24.dp),
+                        .padding(top = 35.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Top
                 ) {
@@ -338,7 +339,7 @@ fun WelcomeScreenCustomer(navController: NavController) {
                     Image(
                         painter = painterResource(id = R.drawable.cereals),
                         contentDescription = "Grocery Basket",
-                        modifier = Modifier.size(300.dp)
+                        modifier = Modifier.size(350.dp)
                     )
                 }
             }
@@ -381,9 +382,9 @@ fun WelcomeScreenCustomer(navController: NavController) {
             )
             Spacer(modifier = Modifier.height(36.dp))
             Button(
-                onClick = { navController.navigate(Screens.AuthSelection.route) },
+                onClick = { navController.navigate(Screens.RoleSelection.route) },
                 modifier = Modifier
-                    .padding(horizontal = 32.dp)
+                    .padding(horizontal = 100.dp)
                     .fillMaxWidth()
                     .height(48.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
@@ -393,7 +394,7 @@ fun WelcomeScreenCustomer(navController: NavController) {
                     "Continue",
                     fontSize = 18.sp,
                     fontFamily = Nunito,
-                    color = Color(0xFF0B4D29),
+                    color = Color(0xFF094C37),
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -411,7 +412,7 @@ fun RoleSelectionScreen(navController: NavController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 24.dp, vertical = 32.dp),
+                .padding(horizontal = 24.dp, vertical = 40.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
@@ -419,40 +420,42 @@ fun RoleSelectionScreen(navController: NavController) {
             Image(
                 painter = painterResource(id = R.drawable.white),
                 contentDescription = "Safi Greens Logo",
-                modifier = Modifier.size(300.dp)
+                modifier = Modifier.size(330.dp)
             )
             Spacer(modifier = Modifier.height(16.dp))
             Spacer(modifier = Modifier.height(48.dp))
             Button(
-                onClick = { navController.navigate(Screens.WelcomeCustomer.route) },
+                onClick = { navController.navigate(Screens.SignUp.route) },
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(horizontal = 40.dp)
                     .height(48.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00331A)),
-                shape = RoundedCornerShape(4.dp)
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF094C37)),
+                shape = RoundedCornerShape(10.dp)
             ) {
                 Text(
                     text = "Customer",
                     fontSize = 18.sp,
                     fontFamily = Nunito,
-                    fontWeight = FontWeight.Medium,
+                    fontWeight = FontWeight.SemiBold,
                     color = Color.White,
                 )
             }
             Spacer(modifier = Modifier.height(24.dp))
             OutlinedButton(
-                onClick = { navController.navigate(Screens.WelcomeMama.route) },
+                onClick = { navController.navigate(Screens.SignUp.route) },
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(horizontal = 40.dp)
                     .height(48.dp),
-                shape = RoundedCornerShape(4.dp)
+                shape = RoundedCornerShape(10.dp)
             ) {
                 Text(
                     text = "Mama mboga",
                     fontSize = 18.sp,
                     fontFamily = Nunito,
-                    fontWeight = FontWeight.Medium,
-                    color = Color(0xFF00331A)
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFF094C37)
                 )
             }
         }
@@ -476,7 +479,7 @@ fun RoleSelectionScreen(navController: NavController) {
                     lineTo(0f, height)
                     close()
                 }
-                drawPath(path, color = Color(0xFF00331A))
+                drawPath(path, color = Color(0xFF094C37))
             }
         }
     }
@@ -517,20 +520,22 @@ fun AuthenticationSelectionScreen(navController: NavController) {
                 onClick = { navController.navigate(Screens.SignUp.route) },
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(horizontal = 40.dp)
                     .height(48.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White,
                     contentColor = Color.Black
                 ),
-                shape = RoundedCornerShape(4.dp),
+                shape = RoundedCornerShape(10.dp),
                 elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp)
             ) {
                 Text(
                     text = "Sign Up",
                     fontSize = 18.sp,
-                    color = Color.Black,
+                    color = Color(0xFF094C37),
                     fontFamily = Nunito,
-                    fontWeight = FontWeight.Medium,
+                    fontWeight = FontWeight.SemiBold,
+
                 )
             }
 
@@ -539,20 +544,21 @@ fun AuthenticationSelectionScreen(navController: NavController) {
                 onClick = { navController.navigate(Screens.SignIn.route) },
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(horizontal = 40.dp)
                     .height(48.dp),
                 colors = ButtonDefaults.outlinedButtonColors(
                     containerColor = Color.Transparent,
                     contentColor = Color.White
                 ),
                 border = BorderStroke(1.dp, Color.White),
-                shape = RoundedCornerShape(4.dp)
+                shape = RoundedCornerShape(10.dp)
             ) {
                 Text(
-                    text = "Login",
+                    text = "Sign In",
                     fontSize = 18.sp,
                     fontFamily = Nunito,
                     color = Color.White,
-                    fontWeight = FontWeight.Medium,
+                    fontWeight = FontWeight.SemiBold,
                 )
             }
             }
@@ -572,7 +578,7 @@ fun SignUpScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0B4D29)),
+            .background(Color(0xFF094C37)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
@@ -605,13 +611,17 @@ fun SignUpScreen(navController: NavController) {
             Column(
                 Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 28.dp),
+                    .padding(horizontal = 50.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
                 Spacer(Modifier.height(20.dp))
                 Text(
-                    text = "Name", fontSize = 18.sp, fontFamily = Nunito,fontWeight = FontWeight.Medium,modifier = Modifier
+                    text = "Name", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 2.dp, bottom = 2.dp),
                     textAlign = TextAlign.Start
@@ -619,12 +629,18 @@ fun SignUpScreen(navController: NavController) {
                 OutlinedTextField(
                     value = name,
                     onValueChange = { name = it },
-                    placeholder = { Text("Enter name") },
+                    placeholder = { Text("Enter name", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(14.dp))
                 Text(
-                    text = "Phone Number", fontSize = 18.sp, fontFamily = Nunito,fontWeight = FontWeight.Medium,modifier = Modifier
+                    text = "Phone Number",
+                    fontSize = 18.sp,
+                    color = Color(0xFF094C37),
+                    fontFamily = Nunito,
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 2.dp, bottom = 2.dp),
                     textAlign = TextAlign.Start
@@ -632,13 +648,18 @@ fun SignUpScreen(navController: NavController) {
                 OutlinedTextField(
                     value = phone,
                     onValueChange = { phone = it },
-                    placeholder = { Text("+254") },
+                    placeholder = { Text("+254", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(14.dp))
                 Text(
-                    text = "Create pin", fontSize = 18.sp, fontFamily = Nunito,fontWeight = FontWeight.Medium,modifier = Modifier
+                    text = "Create pin", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 2.dp, bottom = 2.dp),
                     textAlign = TextAlign.Start
@@ -646,14 +667,19 @@ fun SignUpScreen(navController: NavController) {
                 OutlinedTextField(
                     value = pin,
                     onValueChange = { pin = it },
-                    placeholder = { Text("Create pin") },
+                    placeholder = { Text("Create pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
                     visualTransformation = if (showPin) VisualTransformation.None else PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(10.dp))
                 Text(
-                    text = "Confirm pin", fontSize = 18.sp,fontFamily = Nunito, fontWeight = FontWeight.Medium,modifier = Modifier
+                    text = "Confirm pin", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 2.dp, bottom = 3.dp),
                     textAlign = TextAlign.Start
@@ -661,9 +687,10 @@ fun SignUpScreen(navController: NavController) {
                 OutlinedTextField(
                     value = confirmPin,
                     onValueChange = { confirmPin = it },
-                    placeholder = { Text("Confirm pin") },
+                    placeholder = { Text("Confirm pin", fontFamily = Nunito, fontWeight = FontWeight.Normal,color = Color(0xFF094C37),) },
                     visualTransformation = if (showConfirm) VisualTransformation.None else PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(20.dp))
@@ -673,17 +700,12 @@ fun SignUpScreen(navController: NavController) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00331A)),
-                        shape = RoundedCornerShape(12.dp)
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF094C37)),
+                        shape = RoundedCornerShape(10.dp)
                     ) {
-                        Text("Create account", fontSize = 18.sp, fontFamily = Nunito,fontWeight = FontWeight.Medium)
+                        Text("Create account", fontSize = 18.sp, fontFamily = Nunito,fontWeight = FontWeight.SemiBold)
                     }
-                    IconButton(
-                        onClick = { /* Fingerprint signup */ },
-                        modifier = Modifier
-                            .padding(start = 12.dp)
-                            .size(36.dp)
-                    ) {}
+
                 }
                 Spacer(Modifier.height(10.dp))
                 Row(
@@ -695,13 +717,14 @@ fun SignUpScreen(navController: NavController) {
                         text = "Already have an account?",
                         fontFamily = Nunito,
                         fontWeight = FontWeight.Medium,
+                        color = Color(0xFF094C37),
                         textAlign = TextAlign.Start
 
                     )
                     TextButton(onClick = { navController.navigate(Screens.SignIn.route) }) {
                         Text(
                             text = "Sign In",
-                            color = Color(0xFF0B4D29),
+                            color = Color(0xFF094C37),
                             fontSize = 18.sp,
                             fontFamily = Nunito,
                             fontWeight = FontWeight.Bold
@@ -721,7 +744,7 @@ fun SignInScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0B4D29)),
+            .background(Color(0xFF094C37)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(Modifier.height(50.dp))
@@ -755,13 +778,17 @@ fun SignInScreen(navController: NavController) {
             Column(
                 Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 32.dp),
+                    .padding(horizontal = 50.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
                 Spacer(Modifier.height(32.dp))
                 Text(
-                    text = "Phone Number", fontSize = 18.sp,fontFamily = Nunito,fontWeight = FontWeight.Medium, modifier = Modifier
+                    text = "Phone Number", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 6.dp, bottom = 6.dp),
                     textAlign = TextAlign.Start
@@ -769,13 +796,18 @@ fun SignInScreen(navController: NavController) {
                 OutlinedTextField(
                     value = phone,
                     onValueChange = { phone = it },
-                    placeholder = { Text("+254") },
+                    placeholder = { Text("+254", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
                     modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(10.dp),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    text = "Pin", fontSize = 18.sp,fontFamily = Nunito,fontWeight = FontWeight.Medium, modifier = Modifier
+                    text = "Pin", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 6.dp, bottom = 6.dp),
                     textAlign = TextAlign.Start
@@ -783,12 +815,13 @@ fun SignInScreen(navController: NavController) {
                 OutlinedTextField(
                     value = pin,
                     onValueChange = { pin = it },
-                    placeholder = { Text("Enter your pin") },
+                    placeholder = { Text("Enter your pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
                     visualTransformation = if (showPin) VisualTransformation.None else PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Password,
                         imeAction = ImeAction.Done
                     ),
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.fillMaxWidth()
                 )
                 TextButton(
@@ -799,7 +832,7 @@ fun SignInScreen(navController: NavController) {
                 ) {
                     Text(
                         "Forgot PIN?",
-                        color = Color(0xFF0B4D29),
+                        color = Color(0xFF094C37),
                         fontFamily = Nunito,
                         fontWeight = FontWeight.Bold,
                     )
@@ -814,17 +847,11 @@ fun SignInScreen(navController: NavController) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00331A)),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF094C37)),
                         shape = RoundedCornerShape(12.dp)
                     ) {
-                        Text("Sign In", fontSize = 18.sp,fontFamily = Nunito,fontWeight = FontWeight.Medium)
+                        Text("Sign In", fontSize = 18.sp,fontFamily = Nunito,fontWeight = FontWeight.SemiBold)
                     }
-                    IconButton(
-                        onClick = { /* Fingerprint login */ },
-                        modifier = Modifier
-                            .padding(start = 12.dp)
-                            .size(36.dp)
-                    ) {}
                 }
                 Spacer(Modifier.height(10.dp))
                 Row(
@@ -841,7 +868,7 @@ fun SignInScreen(navController: NavController) {
                     TextButton(onClick = { navController.navigate(Screens.SignUp.route) }) {
                         Text(
                             text = "Sign Up",
-                            color = Color(0xFF0B4D29),
+                            color = Color(0xFF094C37),
                             fontSize = 18.sp,
                             fontFamily = Nunito,
                             fontWeight = FontWeight.Bold
@@ -883,7 +910,7 @@ fun ResetPinScreen(navController: NavController) {
             Column(
                 Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 32.dp),
+                    .padding(horizontal = 50.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Top
             ) {
@@ -892,7 +919,7 @@ fun ResetPinScreen(navController: NavController) {
                     "Reset Pin",
                     fontSize = 28.sp,
                     fontFamily = Nunito,
-                    color = Color(0xFF0B4D29),
+                    color = Color(0xFF094C37),
                     fontWeight = FontWeight.Bold
                 )
                 Text(
@@ -900,7 +927,7 @@ fun ResetPinScreen(navController: NavController) {
                     fontSize = 14.sp,
                     fontFamily = Nunito,
                     fontWeight = FontWeight.Medium,
-                    color = Color.Gray,
+                    color = Color(0xFF094C37),
                     modifier = Modifier.padding(bottom = 18.dp)
                 )
                 Row(
@@ -929,7 +956,11 @@ fun ResetPinScreen(navController: NavController) {
                     }
                 }
                 Text(
-                    text = "Create Pin", fontSize = 18.sp,fontFamily = Nunito, fontWeight = FontWeight.Medium,modifier = Modifier
+                    text = "Create Pin", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 6.dp, bottom = 2.dp),
                     textAlign = TextAlign.Start
@@ -937,14 +968,19 @@ fun ResetPinScreen(navController: NavController) {
                 OutlinedTextField(
                     value = pin,
                     onValueChange = { pin = it },
-                    placeholder = { Text("Enter your pin") },
+                    placeholder = { Text("Enter your pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 10.dp)
                 )
                 Text(
-                    text = "Confirm Pin", fontSize = 18.sp,fontFamily = Nunito, fontWeight = FontWeight.Medium,modifier = Modifier
+                    text = "Confirm Pin", fontSize = 18.sp,
+                    fontFamily = Nunito,
+                    color = Color(0xFF094C37),
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 6.dp, bottom = 6.dp),
                     textAlign = TextAlign.Start
@@ -952,8 +988,9 @@ fun ResetPinScreen(navController: NavController) {
                 OutlinedTextField(
                     value = confirmPin,
                     onValueChange = { confirmPin = it },
-                    placeholder = { Text("confirm pin") },
+                    placeholder = { Text("confirm pin", fontFamily = Nunito,fontWeight = FontWeight.Normal,color = Color(0xFF094C37)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 20.dp)
@@ -964,10 +1001,10 @@ fun ResetPinScreen(navController: NavController) {
                         .fillMaxWidth()
                         .height(50.dp)
                         .padding(top = 8.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00331A)),
-                    shape = RoundedCornerShape(12.dp)
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF094C37)),
+                    shape = RoundedCornerShape(10.dp)
                 ) {
-                    Text("Continue",fontFamily = Nunito,fontWeight = FontWeight.Medium)
+                    Text("Continue",fontFamily = Nunito,fontWeight = FontWeight.SemiBold)
                 }
                 OutlinedButton(
                     onClick = { navController.popBackStack() },
@@ -975,9 +1012,9 @@ fun ResetPinScreen(navController: NavController) {
                         .fillMaxWidth()
                         .height(48.dp)
                         .padding(top = 8.dp),
-                    shape = RoundedCornerShape(12.dp)
+                    shape = RoundedCornerShape(10.dp)
                 ) {
-                    Text("Cancel", fontFamily = Nunito,fontWeight = FontWeight.Medium,color = Color(0xFF0B4D29))
+                    Text("Cancel", fontFamily = Nunito,fontWeight = FontWeight.SemiBold,color = Color(0xFF094C37))
                 }
             }
         }
@@ -1005,7 +1042,7 @@ fun ResetPinScreen(navController: NavController) {
                 }
                 drawPath(
                     path = path,
-                    color = Color(0xFF00331A)
+                    color = Color(0xFF094C37)
                 )
             }
         }
