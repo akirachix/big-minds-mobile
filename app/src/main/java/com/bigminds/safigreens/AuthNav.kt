@@ -951,6 +951,7 @@ fun ResetPinScreen(navController: NavController) {
                                 .width(45.dp)
                                 .height(55.dp),
                             singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                             maxLines = 1
                         )
                     }
