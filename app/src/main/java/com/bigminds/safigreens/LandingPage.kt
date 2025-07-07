@@ -35,9 +35,9 @@ import androidx.compose.ui.graphics.PaintingStyle
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.material3.HorizontalDivider
-
-
-
+import androidx.compose.ui.graphics.Shape
+import  androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Settings
 
 data class Product(
     val product_id: Int,
@@ -106,6 +106,7 @@ fun LandingPage(viewModel: ProductViewModel = viewModel()) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
     var selectedNavIndex by remember { mutableStateOf(0) }
+
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -123,7 +124,8 @@ fun LandingPage(viewModel: ProductViewModel = viewModel()) {
             Column(
                 modifier = Modifier
                     .padding(innerPadding)
-
+                    .fillMaxSize()
+//                    .padding(bottom = 24.dp)
             ) {
                 HeroSection(
                     searchQuery = viewModel.searchQuery,
@@ -162,6 +164,7 @@ fun LandingPage(viewModel: ProductViewModel = viewModel()) {
         }
     }
 }
+
 
 @Composable
 fun HeroSection(searchQuery: String,
@@ -513,16 +516,15 @@ fun BottomNavigationBar(
         R.drawable.ic_bell,
         R.drawable.ic_store
     )
-    val labels = listOf("Home", "Cart", "Orders", "Alerts", "Shop")
+    val labels = listOf("Home", "Cart", "Orders", "Notification", "Shop")
     Surface(
         shadowElevation = 8.dp
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp),
+                .padding(start = 8.dp, top = 0.dp, end = 8.dp, bottom = 8.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
         ) {
             icons.forEachIndexed { index, icon ->
                 val isSelected = selectedIndex == index
@@ -551,15 +553,34 @@ fun BottomNavigationBar(
 fun DrawerContent() {
     Column(
         modifier = Modifier
-            .fillMaxHeight(0.5f)
+            .fillMaxHeight(1f)
             .fillMaxWidth(0.5f)
-            .background(CustomGreen)
+            .background(Color.White, shape = RoundedCornerShape(topEnd = 16.dp, bottomEnd = 16.dp))
             .padding(top =32.dp)
     ) {
-        Text("Profile", color = Color.White, fontSize = 20.sp, modifier = Modifier.padding(8.dp))
-        HorizontalDivider(Modifier, DividerDefaults.Thickness, color = Color.White)
-        Text("Settings", color = Color.White, fontSize = 20.sp, modifier = Modifier.padding(8.dp))
-        HorizontalDivider(Modifier, DividerDefaults.Thickness, color = Color.White)
+        Row (verticalAlignment = Alignment.CenterVertically){
+            Icon(
+                imageVector = Icons.Default.Person,
+                contentDescription = "Profile picture",
+                tint = CustomGreen,
+                modifier = Modifier.size(28.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text("Profile", color = CustomGreen, fontSize = 20.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(8.dp))
+
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        Row (verticalAlignment = Alignment.CenterVertically){
+            Icon(
+                imageVector = Icons.Default.Settings,
+                contentDescription = "Profile picture",
+                tint = CustomGreen,
+                modifier = Modifier.size(28.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text("Settings", color = CustomGreen, fontSize = 20.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(8.dp))
+
+        }
     }
 }
 
