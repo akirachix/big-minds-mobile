@@ -7,23 +7,17 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.grid.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import androidx.lifecycle.*
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -32,10 +26,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import coil.decode.SvgDecoder
-import java.nio.file.WatchEvent
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.drawBehind
@@ -43,17 +34,8 @@ import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.PaintingStyle
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.input.pointer.HistoricalChange
-import androidx.compose.ui.modifier.modifierLocalConsumer
-import androidx.compose.ui.text.style.TextAlign
-import com.bigminds.safigreens.ui.theme.SafiGreensTheme
-import retrofit2.http.Query
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.ShoppingCart
-import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.HorizontalDivider
 
-//import androidx.compose.material.icons.filled.Store
 
 
 
@@ -368,7 +350,7 @@ fun HeroSection(searchQuery: String,
                 label = "Vegetables",
                 isSelected = selectedCategory == "Vegetable",
                 onClick = {onCategorySelect("Vegetable")})
-            CategoryItem(imageRes = R.drawable.cereals,
+            CategoryItem(imageRes = R.drawable.cereal,
                 label = "Cereals",
                 isSelected = selectedCategory == "Cereal",
                 onClick = {onCategorySelect("Cereal")})
