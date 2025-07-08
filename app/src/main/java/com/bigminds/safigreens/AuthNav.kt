@@ -6,6 +6,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -17,15 +18,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -46,6 +44,8 @@ sealed class Screens(val route: String) {
     object SignUp : Screens("sign_up")
     object SignIn : Screens("sign_in")
     object ResetPin : Screens("reset_pin")
+
+    object ConfirmPin : Screens("confirm_pin")
 }
 
 
@@ -61,6 +61,7 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
         composable(Screens.SignUp.route) { SignUpScreen(navController) }
         composable(Screens.SignIn.route) { SignInScreen(navController) }
         composable(Screens.ResetPin.route) { ResetPinScreen(navController) }
+        composable ( Screens.ConfirmPin.route) {ConfirmPinScreen(navController) }
     }
 }
 
@@ -998,7 +999,7 @@ fun ResetPinScreen(navController: NavController) {
                         .padding(bottom = 20.dp)
                 )
                 Button(
-                    onClick = { navController.navigate(Screens.SignIn.route) },
+                    onClick = { navController.navigate(Screens.ConfirmPin.route) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
@@ -1009,7 +1010,7 @@ fun ResetPinScreen(navController: NavController) {
                     Text("Continue",fontFamily = Nunito,fontWeight = FontWeight.SemiBold)
                 }
                 OutlinedButton(
-                    onClick = { navController.popBackStack() },
+                    onClick = { navController.navigate(Screens.SignIn.route) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(48.dp)
@@ -1049,6 +1050,50 @@ fun ResetPinScreen(navController: NavController) {
             }
         }
     }
+}
+
+@Composable
+
+fun ConfirmPinScreen(navController: NavController){
+
+    Column (modifier = Modifier
+        .fillMaxWidth()
+        .fillMaxHeight()
+        .background(Color(0xFF094C37)),
+        verticalArrangement =Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+        )
+    {
+        Image(
+            painterResource(id = R.drawable.confirm),
+            contentDescription = null,
+            modifier = Modifier.size(150.dp)
+        )
+        Spacer(modifier = Modifier.height(30.dp))
+        Text(
+            text = "Your pin has been\nreset!",
+            textAlign = TextAlign.Center,
+            fontSize = 26.sp,
+            fontFamily = Nunito,
+            color = Color(0xFFFFFFFF),
+            fontWeight = FontWeight.SemiBold
+        )
+        Spacer(modifier = Modifier.height(25.dp))
+
+        Button(
+            onClick = { navController.navigate(Screens.SignIn.route) },
+            modifier = Modifier
+                .fillMaxWidth(0.4f)
+                .height(50.dp),
+//                .padding(horizontal = 45.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFFFFF)),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Text("Done", fontFamily = Nunito, fontSize = 21.sp, fontWeight = FontWeight.Bold,color = Color(0xFF094C37))
+
+        }
+    }
+
 }
 
 
@@ -1096,5 +1141,11 @@ fun SignInScreenPreview() {
 @Composable
 fun ResetPinScreenPreview() {
     ResetPinScreen(navController = rememberNavController())
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun ConfirmPinPreview(){
+    ConfirmPinScreen(navController = rememberNavController())
 }
 
